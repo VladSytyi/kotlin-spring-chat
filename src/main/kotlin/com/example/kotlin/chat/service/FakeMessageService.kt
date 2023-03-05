@@ -1,6 +1,7 @@
 package com.example.kotlin.chat.service
 
-import com.github.javafaker.Faker
+//import com.github.javafaker.Faker
+import net.datafaker.Faker
 import org.springframework.stereotype.Service
 import java.net.URL
 import java.time.Instant
@@ -16,9 +17,9 @@ class FakeMessageService : MessageService {
     )
 
     val usersQuotes: Map<String, () -> String> = mapOf(
-        "Shakespeare"  to { Faker.instance().shakespeare().asYouLikeItQuote() },
-        "RickAndMorty" to { Faker.instance().rickAndMorty().quote() },
-        "Yoda"         to { Faker.instance().yoda().quote() }
+        "Shakespeare"  to { Faker().shakespeare().asYouLikeItQuote() },
+        "RickAndMorty" to { Faker().rickAndMorty().quote() },
+        "Yoda"         to { Faker().yoda().quote() }
     )
 
     override fun latest(): List<MessageVM> {
