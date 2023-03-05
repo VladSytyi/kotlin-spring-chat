@@ -33,6 +33,7 @@ dependencies {
 	}
 	implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
 	runtimeOnly("com.h2database:h2")
+	implementation("org.jetbrains:markdown:0.2.2")
 }
 
 tasks.withType<Test> {
